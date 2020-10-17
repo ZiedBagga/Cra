@@ -1,0 +1,39 @@
+
+ <div class="ttt"></div>
+<div  [ngClass]="formClass"  >
+  <h3>Créer votre compte-rendu d'activité : </h3>
+<mat-form-field class="inp" appearance="fill">
+  <mat-label>Client :</mat-label>
+  <input [(ngModel)]="client" matInput required>
+</mat-form-field>
+<br>
+<mat-form-field class="inp" appearance="fill">
+  <mat-label>Mission :</mat-label>
+  <input [(ngModel)]="mission" matInput required>
+</mat-form-field>
+<br>
+<mat-form-field appearance="fill">
+    <mat-label>Fait le :</mat-label>
+    <input matInput   [(ngModel)]="dateOf" [matDatepicker]="picker"  [matDatepickerFilter]="dateFilter" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker ></mat-datepicker>
+  </mat-form-field>
+ 
+ <br>
+  <mat-form-field  class="inp" appearance="fill">
+    <mat-label>A partir de :</mat-label>
+    <input   type="time" [(ngModel)]="debut" matInput required>
+  </mat-form-field>
+  <br>
+    <mat-form-field class="inp" appearance="fill">
+    <mat-label>Jusqu'à :</mat-label>
+    <input  type="time" [(ngModel)]="fin"  matInput required>
+  </mat-form-field>
+  <div class="bouton">
+    <button class="annuler"  mat-raised-button> Annuler </button> 
+    <button class="ajouter" mat-raised-button> Ajouter </button>
+  </div>
+  <br>
+  </div>
+ 
+ 

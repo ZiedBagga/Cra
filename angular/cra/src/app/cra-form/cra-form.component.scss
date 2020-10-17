@@ -1,0 +1,57 @@
+.inp{
+    width: 236px;
+}
+ 
+.mat-form-field {
+    margin-left: 70px;
+}
+.mat-focus-indicator{
+    background-color: #e0e7e8;
+}
+.bouton
+{
+    margin-left: 120px;
+}
+.annuler{
+    margin-right: 26px;
+     
+
+}
+ h3{
+    padding-left: 68px;
+    font-family: Georgia, serif;;
+    padding-bottom: 10px;
+ }
+.not-active {
+    top: -100%;
+    left: 033% ;
+    background-color:  #e6e8ec;
+    margin: 10px;
+    width: 400px;
+    padding: 10px;
+    height: 470px;
+    border-radius: 10px;
+    position: fixed; 
+    z-index: 1110;
+}
+.ttt{
+     
+    background: rgb(0 0 0 / 56%);
+    height: 00%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1100;
+}
+.active{
+    top: 30%;
+    left: 30% ;
+    background-color: rgb(194 207 210 / 50%);
+    margin: 10px;
+    width: 400px;
+    padding: 10px;
+    height: 500px;
+    border-radius: 10px;
+    position: fixed; 
+}

@@ -1,0 +1,70 @@
+
+<br><br><br>
+<div class="row text-center">
+<div class="col-md-4">   
+</div>
+<div class="col-md-4">   
+  <h3 class="title" > Liste des mois </h3>
+</div>
+<div class="col-md-4">   
+  <button routerLink="/calendar" class="ajouter" mat-stroked-button color="primary"> ⊕ Nouveau CRA</button>
+</div>
+</div>
+<br>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+   
+    
+
+    <!-- mois Column -->
+    <ng-container matColumnDef="mois" > 
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{moisId[element.mois]}}-{{element.annee}}  </td>
+    </ng-container>
+
+    <!-- annee Column -->
+    <ng-container matColumnDef="annee" > 
+      <th rowspan="0" mat-header-cell *matHeaderCellDef>  </th>
+      <td  colspan="0" mat-cell *matCellDef="let element"></td>
+    </ng-container>
+
+
+    <!-- client Column -->
+    <ng-container matColumnDef="client">
+      <th mat-header-cell *matHeaderCellDef> client </th>
+      <td mat-cell  *matCellDef="let element"> {{element.client}} </td>
+    </ng-container>
+
+    <!-- mission Column -->
+    <ng-container matColumnDef="mission">
+      <th mat-header-cell *matHeaderCellDef> mission </th>
+      <td mat-cell *matCellDef="let element"> {{element.mission}} </td>
+    </ng-container>
+
+    <!-- journees Column -->
+    <ng-container matColumnDef="journees">
+      <th mat-header-cell *matHeaderCellDef> journees </th>
+      <td mat-cell *matCellDef="let element"> {{element.journees}} </td>
+    </ng-container>
+
+
+    <!-- Options Column -->
+    <ng-container matColumnDef="Status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell (click)="Onclick(element.mois+'-'+element.annee)" *matCellDef="let element"> {{element.Status}} <a onclick="gtdate()" routerLink="/calendar" class="gtdate" >  Consulter </a>  </td>
+    </ng-container>
+    
+     <td><a onclick="gtdate()"   class="gtdate" >  Consulter </a> </td>
+   
+    
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>>
+  <mat-paginator [pageSize]="6" [pageSizeOptions]="[6, 12, 24]" [showFirstLastButtons]="true"></mat-paginator>
+  </div>
+
+
+
+    

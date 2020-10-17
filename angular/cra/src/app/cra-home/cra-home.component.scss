@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+}
+.excel{
+  color: darkmagenta;
+  cursor: pointer;
+}
+.title{
+  font-family: "Times New Roman", Times, serif;
+font-size: 25px;
+letter-spacing: 6px;
+word-spacing: 6px;
+color: #6570BF;
+font-weight: normal;
+text-decoration: none;
+font-style: italic;
+font-variant: normal;
+text-transform: none;
+}
+
+.gtdate{
+  color: darkslateblue;
+  cursor: pointer ;
+  padding-left: 20px;
+}
+.button{
+  background-color: rgb(206, 202, 202);
+}
+.example-button-container{
+  color: rgba(194, 165, 165, 0.568);
+  text-shadow: 0.5px 0.5px rgba(176, 196, 222, 0.678) ;
+  font-size: 20px;
+  cursor: pointer;
+}
+.ajouter{
+  cursor: pointer ;
+  margin-right: 20px;
+ 
+}

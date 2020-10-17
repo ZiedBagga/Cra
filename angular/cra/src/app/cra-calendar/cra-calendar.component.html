@@ -1,0 +1,80 @@
+<br>
+
+<br>
+<div class="row text-center">
+<div class="col-md-4">
+<button routerLink="/home" class="ajouter" mat-stroked-button color="primary"> <- Liste de mois </button>
+</div>
+  <div class="col-md-4">
+     
+  </div>
+  <div class="col-md-4">
+      <button   class="cra" onclick="Ajout()" mat-stroked-button color="accent"> créer un nouveau cra </button>
+  </div>
+      
+
+</div>
+<br>
+<div>
+<div class="row text-center">
+    <div class="col-md-4">
+      <div class="btn-group">
+        <div
+          class="btn btn-primary"
+          mwlCalendarPreviousView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()"
+        >
+          Previous
+        </div>
+        <div
+          class="btn btn-outline-secondary"
+          mwlCalendarToday
+          [(viewDate)]="viewDate"
+        >
+          Today
+        </div>
+        <div
+          class="btn btn-primary"
+          mwlCalendarNextView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()"
+        >
+          Next
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'fr' }}</h3>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="fill" >
+        <mat-label>aller à : </mat-label>
+        <input class="goto" matInput (dateInput)='testevent(goto.value)' (keyup.enter)='testevent(goto.value)'  #goto [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker ></mat-datepicker>
+      </mat-form-field>
+    </div>
+    
+  </div>
+  <br />
+  <div [ngSwitch]="view">
+    <mwl-calendar-month-view
+      *ngSwitchCase="CalendarView.Month"
+      [viewDate]="viewDate"
+      [events]="events"
+      [excludeDays]="excludeDays"
+      [refresh]="refresh"
+       [locale]="locale"
+      [activeDayIsOpen]="activeDayIsOpen"
+      (dayClicked)="dayClicked($event.day)"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-month-view>
+    
+</div>
+</div>
+<cra-form class="craa"></cra-form>
